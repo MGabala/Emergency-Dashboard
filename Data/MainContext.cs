@@ -1,8 +1,4 @@
-﻿using EmergencyDashboard.Models;
-
-using Microsoft.EntityFrameworkCore;
-
-namespace EmergencyDashboard.Data
+﻿namespace EmergencyDashboard.Data
 {
     public class MainContext : DbContext
     {

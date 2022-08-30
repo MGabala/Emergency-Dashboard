@@ -1,6 +1,4 @@
-﻿using EmergencyDashboard.Models;
-
-namespace EmergencyDashboard.Repositories
+﻿namespace EmergencyDashboard.Repositories
 {
     public interface IAgenciesRepository
     {

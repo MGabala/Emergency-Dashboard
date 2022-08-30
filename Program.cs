@@ -1,10 +1,3 @@
-
-using EmergencyDashboard.Data;
-using EmergencyDashboard.Hubs;
-
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

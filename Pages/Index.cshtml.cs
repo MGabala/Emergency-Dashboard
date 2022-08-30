@@ -1,10 +1,4 @@
-﻿using EmergencyDashboard.Data;
-using EmergencyDashboard.Models;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace EmergencyDashboard.Pages
+﻿namespace EmergencyDashboard.Pages
 {
     public class IndexModel : PageModel
     {

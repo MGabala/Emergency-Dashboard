@@ -1,9 +1,4 @@
-﻿using EmergencyDashboard.Data;
-using EmergencyDashboard.Models;
-
-using Microsoft.EntityFrameworkCore;
-
-namespace EmergencyDashboard.Repositories
+﻿namespace EmergencyDashboard.Repositories
 {
     public class AgenciesRepository : IAgenciesRepository
     {
