@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
+<p>People watching this page: <span id="viewCounter">0</span></p>
+
 <div class="container">
     <div class="row">
 <div class="card col-md-3">
@@ -21,7 +24,7 @@
             <tbody>
                         @foreach (var agency in Model.Agencies)
                         {
-                        <tr><td>@agency.Name</td><td>@agency.City</td><td>@agency.Status</td></tr>
+                            <tr><td>@agency.Name</td><td>@agency.City</td><td><span id="status">@agency.Status</span></td></tr>
                         }
                       
               

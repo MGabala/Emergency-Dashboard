@@ -17,10 +17,15 @@ async function start() {
 connection.onclose(async () => {
     await start();
 });
-//BUTTONS
+
+//PAGE ELEMENTS
+var status = document.getElementById("status");
+var counter = document.getElementById("viewCounter");
 
 //FROM HUB TO CLIENT [EVENTS]
-
+connection.on("ViewCountUpdate", (viewCount) => {
+    counter.innerHTML = viewCount;
+});
 
 // Start the connection.
 start();

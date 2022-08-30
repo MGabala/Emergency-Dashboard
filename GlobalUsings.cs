@@ -8,3 +8,4 @@ global using Microsoft.AspNetCore.Mvc.ViewFeatures;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.AspNetCore.Mvc.RazorPages;
 global using Microsoft.AspNetCore.SignalR;
+global using EmergencyDashboard.Hubs;

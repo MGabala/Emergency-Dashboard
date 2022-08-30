@@ -6,15 +6,16 @@
         private MainContext _context;
         public IEnumerable<AgenciesModel> Agencies { get; set; } = null!;
 
-        public IndexModel(ILogger<IndexModel> logger, MainContext context)
+        public IndexModel(ILogger<IndexModel> logger, MainContext _context)
         {
             _logger = logger;
-            _context = context;
+           
+            this._context = _context;
         }
 
      public async Task OnGetAsync()
         {
-            Agencies = _context.Agencies.OrderBy(x => x.Id);
+            Agencies = await _context.Agencies.OrderBy(x => x.Id).ToListAsync();
         }
     }
 }
