@@ -12,7 +12,7 @@
 
         public void Dispose()
         {
-          
+            throw new NotImplementedException();
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
