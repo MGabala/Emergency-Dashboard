@@ -3,7 +3,7 @@
     public interface IMainHub
     {
         Task ViewCountUpdate(int viewCount);
-        Task CheckStatus();
+        Task CheckStatus(string status);
         
     }
 }

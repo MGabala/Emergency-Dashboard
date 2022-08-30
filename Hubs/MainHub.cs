@@ -4,6 +4,12 @@ namespace EmergencyDashboard.Hubs
 {
     public class MainHub : Hub<IMainHub>
     {
+        private readonly MainContext context;
+
+        public MainHub(MainContext context)
+        {
+            this.context = context;
+        }
         public static int ViewCount { get; set; } = 0;
         public async override Task OnConnectedAsync()
         {
@@ -19,7 +25,12 @@ namespace EmergencyDashboard.Hubs
         }
         public async Task CheckStatus()
         {
-            await Clients.All.CheckStatus(); 
+            var lista = await context.Agencies.OrderBy(x => x.Status).ToListAsync();
+            foreach(var x in lista)
+            {
+                await Clients.All.CheckStatus(x.Status);
+            }
+          
         }
     }
 }
