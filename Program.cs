@@ -1,9 +1,14 @@
 
+using EmergencyDashboard.Data;
 using EmergencyDashboard.Hubs;
+
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<MainContext>(db_config => db_config.UseSqlite(builder.Configuration["ConnectionStrings:DB"]));
 builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
 var app = builder.Build();

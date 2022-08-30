@@ -3,9 +3,35 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h1>Emergency Dashboard</h1>
+<div class="container">
+    <div class="row">
+<div class="card col-md-3">
+    <div class="card-header">
+        Jednoski
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Jednostka </td>
+                    <td>Miasto </td>
+                    <td>Status </td>
+                </tr>
+            </thead>
+            <tbody>
+                        @foreach (var agency in Model.Agencies)
+                        {
+                        <tr><td>@agency.Name</td><td>@agency.City</td><td>@agency.Status</td></tr>
+                        }
+                      
+              
+            </tbody>
+        </table>
+    </div>
+</div>
 
-
+    </div>
+</div>
 
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
