@@ -26,15 +26,12 @@ connection.on("ViewCountUpdate", (viewCount) => {
     counter.innerHTML = viewCount;
 });
 
-connection.on("ChangeStateTest", (value) => {
+connection.on("changeAgencyState", (value) => {
    
     st.innerText = value.toString();
 
 });
 
-connection.on("ChangeStateTest", (agencyId, value) => {
-   
-});
 
 // Start the connection.
 start();
