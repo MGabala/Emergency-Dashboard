@@ -23,14 +23,9 @@ namespace EmergencyDashboard.Hubs
             await Clients.All.ViewCountUpdate(ViewCount);
             await base.OnDisconnectedAsync(exception);
         }
-        public async Task CheckStatus()
+        public async Task UpdateState(string state)
         {
-            var lista = await context.Agencies.OrderBy(x => x.Status).ToListAsync();
-            foreach(var x in lista)
-            {
-                await Clients.All.CheckStatus(x.Status);
-            }
-          
+            await Clients.All.ChangeStateTest(state);
         }
     }
 }

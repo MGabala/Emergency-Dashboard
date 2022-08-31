@@ -2,8 +2,7 @@
 {
     public interface IMainHub
     {
+        Task ChangeStateTest(string state);
         Task ViewCountUpdate(int viewCount);
-        Task CheckStatus(string status);
-        
     }
 }

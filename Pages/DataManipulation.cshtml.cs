@@ -1,3 +1,5 @@
+using EmergencyDashboard.Hubs;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,16 +7,18 @@ namespace EmergencyDashboard.Pages
 {
     public class DataManipulationModel : PageModel
     {
-        private readonly MainContext context;
+        private readonly IHubContext<MainHub> context;
 
-        public DataManipulationModel(MainContext context)
+        public DataManipulationModel(IHubContext<MainHub> _context)
         {
-            this.context = context;
+            context = _context;
         }
-        public async Task OnPostChangeState()
+        public void OnGet()
         {
-
         }
-
+        public async Task OnPostStart()
+        {
+            await context.Clients.All.SendAsync("changeStateTest", "test");
+        }
     }
 }

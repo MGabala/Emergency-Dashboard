@@ -1,6 +1,6 @@
 ﻿const connection = new signalR.HubConnectionBuilder()
     .withUrl("/emergency")
-    .configureLogging(signalR.LogLevel.Trace)
+    .configureLogging(signalR.LogLevel.Debug)
     .withAutomaticReconnect([0, 10, 30, 60, 90, 150])
     .build();
 
@@ -19,13 +19,18 @@ connection.onclose(async () => {
 });
 
 //PAGE ELEMENTS
-var status = document.getElementById("status");
 var counter = document.getElementById("viewCounter");
+var st = document.getElementById("teststat");
 
 //FROM HUB TO CLIENT [EVENTS]
 connection.on("ViewCountUpdate", (viewCount) => {
     counter.innerHTML = viewCount;
 });
+
+connection.on("ChangeStateTest", (value) => {
+    st.innerText = value.toString();
+});
+
 
 // Start the connection.
 start();
