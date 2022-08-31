@@ -2,7 +2,6 @@
 {
     public class AgenciesRepository : IAgenciesRepository
     {
-        private IAgenciesRepository repository;
         private MainContext _context;
         public AgenciesRepository(MainContext context)
         {

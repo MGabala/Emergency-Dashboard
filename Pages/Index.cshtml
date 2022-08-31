@@ -39,17 +39,17 @@
 *@
 
 <div class="header">
-    <h1>Emergency Dashboard - najszybszy monitoring zdarzeń w Polsce</h1>
+    <div class="card-header"><h1>Emergency Dashboard - najszybszy monitoring zdarzeń w Polsce</h1></div> 
 </div>
 
 <div class="menu">
-    <ul>
-        <table class="table">
-            <thead>
+  
+        <table class="table table-striped">
+          <thead>
                 <tr>
-                    <td>Jednostka </td>
-                    <td>Miasto </td>
-                    <td>Status </td>
+                <th scope="col">Jednostka </th>
+                <th scope="col">Miasto </th>
+                <th scope="col">Status </th>
                 </tr>
             </thead>
             <tbody>
@@ -60,12 +60,11 @@
                         <td>@agency.City</td>
                         <td><span id="teststat">test</span></td>
                     </tr>
-
                 }
             </tbody>
         </table>
-    </ul>
-</div>
+    </div>
+
 
 <div class="main">
   <div class="card">
@@ -80,15 +79,15 @@
                             <td>Adres</td>
                             <td>Typ zgłoszenia</td>
                             <td>Czas zgłoszenia</td>
-                            <td>StatusA</td>
-                            
+                            <td>Status</td>
                         </tr>
                     </thead>
                 </table>
             </p>
         </div>
-  </div>
-</div>
+  </div></div>
+
+
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/index.js"></script>

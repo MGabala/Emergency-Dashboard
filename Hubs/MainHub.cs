@@ -17,7 +17,7 @@ namespace EmergencyDashboard.Hubs
             await Clients.All.ViewCountUpdate(ViewCount);
             await base.OnConnectedAsync();
         }
-        public async override Task OnDisconnectedAsync(Exception exception)
+        public async override Task OnDisconnectedAsync(Exception? exception)
         {
             ViewCount--;
             await Clients.All.ViewCountUpdate(ViewCount);
