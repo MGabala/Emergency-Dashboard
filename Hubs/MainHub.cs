@@ -25,7 +25,8 @@ namespace EmergencyDashboard.Hubs
         }
         public async Task UpdateState(int id, string agencyState)
         {
-            await Clients.All.changeAgencyState(id,agencyState);
+            await Clients.All.ChangeAgencyState(id,agencyState);
+            await Clients.All.ChangeReportState(id, agencyState);
         }
     }
 }

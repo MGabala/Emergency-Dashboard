@@ -22,7 +22,7 @@ namespace EmergencyDashboard.Pages
         {
             //Update only first element. Need to scale it to randomly change state for all records.
                 await context.Clients.All.SendAsync("changeAgencyState","Active");
-             
+                await context.Clients.All.SendAsync("changeReportState","Active");
         }
     }
 }
