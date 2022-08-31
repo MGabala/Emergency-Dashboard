@@ -82,6 +82,18 @@
                             <td>Status</td>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach(var report in Model.Reports){
+                            <tr>
+                                <td>@report.Name</td>
+                                <td>@report.City</td>
+                                <td>@report.Address</td>
+                                <td>@report.Type</td>
+                                <td>@report.TimeofReport</td>
+                                <td>@report.Status</td>
+                            </tr>
+                        }
+                    </tbody>
                 </table>
             </p>
         </div>

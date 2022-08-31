@@ -1,4 +1,5 @@
 ﻿using EmergencyDashboard.Hubs;
+using EmergencyDashboard.Models;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ namespace EmergencyDashboard.Pages
         private MainContext _context;
         private readonly IHubContext<MainHub> mainHub;
         public IEnumerable<AgenciesModel> Agencies { get; set; } = null!;
+        public IEnumerable<Reports> Reports { get; set; } = null!;
 
         public IndexModel(ILogger<IndexModel> logger, MainContext _context, IHubContext<MainHub> hubContext)
         {
@@ -21,6 +23,7 @@ namespace EmergencyDashboard.Pages
      public async Task OnGetAsync()
         {
             Agencies = await _context.Agencies.OrderBy(x => x.Id).ToListAsync();
+            Reports = await _context.Reports.OrderBy(x => x.Id).ToListAsync();
         }
         public async Task OnPostStart()
         {
