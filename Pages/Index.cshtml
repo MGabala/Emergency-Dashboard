@@ -3,70 +3,41 @@
 @{
     ViewData["Title"] = "Home page";
 }
-@*<div class="container">
-    <div class="row">
-<div class="card col-md-3">
-    <div class="card-header">
-        Jednoski
-    </div>
-    <div class="card-body">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>Jednostka </td>
-                    <td>Miasto </td>
-                    <td>Status </td>
-                </tr>
-            </thead>
-            <tbody>
-                        @foreach (var agency in Model.Agencies)
-                        {
-                            <tr id="(@agency.Id-tr)">
-                                <td>@agency.Name</td>
-                                <td>@agency.City</td>
-                                <td><span id="teststat">test</span></td>
-                            </tr>
-                           
-                        }
-            </tbody>
-        </table>
-    </div>
-</div>
 
-    </div>
-
-</div>
-*@
 
 <div class="header">
     <div class="card-header"><h1>Emergency Dashboard - najszybszy monitoring zdarzeń w Polsce</h1></div> 
 </div>
 
-<div class="menu">
-  
-        <table class="table table-striped">
-          <thead>
-                <tr>
-                <th scope="col">Jednostka </th>
-                <th scope="col">Miasto </th>
-                <th scope="col">Status </th>
+<div class="listofagencies">
+    <div class="card">
+        <div class="card-header"><center><b>LiveCad</b></center></div>
+        <div class="card-body">
+            <p class="card-text">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Jednostka </th>
+                            <th scope="col">Miasto </th>
+                            <th scope="col">Status </th>
+                        </tr>
+        </div> </thead>
+        <tbody>
+            @foreach (var agency in Model.Agencies)
+            {
+                <tr id="(@agency.Id-tr)">
+                    <td>@agency.Name</td>
+                    <td>@agency.City</td>
+                    <td><span id="teststat">test</span></td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var agency in Model.Agencies)
-                {
-                    <tr id="(@agency.Id-tr)">
-                        <td>@agency.Name</td>
-                        <td>@agency.City</td>
-                        <td><span id="teststat">test</span></td>
-                    </tr>
-                }
-            </tbody>
+            }
+        </tbody>
         </table>
+        </p>
     </div>
+</div></div>
 
-
-<div class="main">
+<div class="listofreports">
   <div class="card">
         <div class="card-header"><center><b>LiveCad</b></center></div>
         <div class="card-body">

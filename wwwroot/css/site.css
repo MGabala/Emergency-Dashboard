@@ -24,20 +24,24 @@ h1{
 
 
 .header {
-    border: 1px solid black;
+    border: 1px inset black;
     padding: 15px;
 }
 
-.menu {
+.listofagencies {
     width: 35%;
     float: left;
     padding: 15px;
-    border: 1px solid black;
+    border: 1px inset black;
 }
 
-.main {
+.listofreports {
     width: 65%;
     float: left;
     padding: 15px;
-    border: 1px solid black;
+    border: 1px inset black;
+}
+body {
+    margin-bottom: 60px;
+    background-color: white;
 }
