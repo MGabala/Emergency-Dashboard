@@ -21,16 +21,20 @@ connection.onclose(async () => {
 //PAGE ELEMENTS
 var counter = document.getElementById("viewCounter");
 var st = document.getElementById("teststat");
-
 //FROM HUB TO CLIENT [EVENTS]
 connection.on("ViewCountUpdate", (viewCount) => {
     counter.innerHTML = viewCount;
 });
 
 connection.on("ChangeStateTest", (value) => {
+   
     st.innerText = value.toString();
+
 });
 
+connection.on("ChangeStateTest", (agencyId, value) => {
+   
+});
 
 // Start the connection.
 start();

@@ -2,7 +2,7 @@
 {
     public interface IMainHub
     {
-        Task ChangeStateTest(int agencyId, string state);
+        Task ChangeStateTest(int id, string state);
         Task ViewCountUpdate(int viewCount);
     }
 }

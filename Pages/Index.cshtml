@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="container">
+@*<div class="container">
     <div class="row">
 <div class="card col-md-3">
     <div class="card-header">
@@ -21,7 +21,12 @@
             <tbody>
                         @foreach (var agency in Model.Agencies)
                         {
-                            <tr><td>@agency.Name</td><td>@agency.City</td><td><span id="teststat">test</span></td></tr>
+                            <tr id="(@agency.Id-tr)">
+                                <td>@agency.Name</td>
+                                <td>@agency.City</td>
+                                <td><span id="teststat">test</span></td>
+                            </tr>
+                           
                         }
             </tbody>
         </table>
@@ -29,8 +34,61 @@
 </div>
 
     </div>
+
+</div>
+*@
+
+<div class="header">
+    <h1>Emergency Dashboard - najszybszy monitoring zdarzeń w Polsce</h1>
 </div>
 
+<div class="menu">
+    <ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Jednostka </td>
+                    <td>Miasto </td>
+                    <td>Status </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var agency in Model.Agencies)
+                {
+                    <tr id="(@agency.Id-tr)">
+                        <td>@agency.Name</td>
+                        <td>@agency.City</td>
+                        <td><span id="teststat">test</span></td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </ul>
+</div>
+
+<div class="main">
+  <div class="card">
+        <div class="card-header"><center><b>LiveCad</b></center></div>
+        <div class="card-body">
+            <p class="card-text">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Jednostka</td>
+                            <td>Miasto</td>
+                            <td>Adres</td>
+                            <td>Typ zgłoszenia</td>
+                            <td>Czas zgłoszenia</td>
+                            <td>StatusA</td>
+                            
+                        </tr>
+                    </thead>
+                </table>
+            </p>
+        </div>
+  </div>
+</div>
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/index.js"></script>

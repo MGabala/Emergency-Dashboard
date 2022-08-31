@@ -20,7 +20,8 @@ namespace EmergencyDashboard.Pages
         }
         public async Task OnPostStart()
         {
-                await context.Clients.All.SendAsync("changeStateTest", "Aktywna");
+            //Update only first element. Need to scale it to randomly change state for all records.
+                await context.Clients.All.SendAsync("changeStateTest","Active");
         }
     }
 }
