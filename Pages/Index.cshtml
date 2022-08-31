@@ -27,7 +27,7 @@
             <tbody>
                         @foreach (var agency in Model.Agencies)
                         {
-                            <tr><td>@agency.Name</td><td>@agency.City</td><td><span id="state">test</span></td></tr>
+                            <tr><td><span id="@agency.Id"></span></td><td>@agency.Name</td><td>@agency.City</td><td><span id="teststat">test</span></td></tr>
                         }
             </tbody>
         </table>
@@ -37,7 +37,7 @@
     </div>
 </div>
 
-<p><span id="teststat">xd</span></p>
+<p><span id="sta">xd</span></p>
 
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>

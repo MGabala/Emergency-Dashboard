@@ -1,4 +1,4 @@
-
+using EmergencyDashboard.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MainContext>(db_config => db_config.UseSqlite(builder.Configuration["ConnectionStrings:DB"]));
 builder.Services.AddRazorPages();
 builder.Services.AddSignalR();
+builder.Services.AddScoped<IAgenciesRepository, AgenciesRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -3,14 +3,15 @@
     public class AgenciesRepository : IAgenciesRepository
     {
         private IAgenciesRepository repository;
-        public AgenciesRepository(IAgenciesRepository repository)
+        private MainContext _context;
+        public AgenciesRepository(MainContext context)
         {
-            this.repository = repository;
+            _context = context;
         }
 
         public async Task<IEnumerable<AgenciesModel>> GetAllAgenciesAsync()
         {
-            return await repository.GetAllAgenciesAsync();
+            return await _context.Agencies.OrderBy(x => x.Id).ToListAsync();
         }
     }
 }

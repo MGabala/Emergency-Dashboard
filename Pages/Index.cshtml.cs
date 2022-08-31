@@ -24,7 +24,7 @@ namespace EmergencyDashboard.Pages
         }
         public async Task OnPostStart()
         {
-            await mainHub.Clients.All.SendAsync("ChangeStateTest", "state");
+            await mainHub.Clients.All.SendAsync("ChangeStateTest", "Aktywna");
         }
     }
 }
