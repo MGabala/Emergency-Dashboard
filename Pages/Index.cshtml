@@ -3,12 +3,6 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-
-<form method="post">
-    <button type="submit" class="btn btn-sm btn-success" asp-page-handler="Start">Start</button>
-</form>
-<hr />
 <div class="container">
     <div class="row">
 <div class="card col-md-3">
@@ -27,7 +21,7 @@
             <tbody>
                         @foreach (var agency in Model.Agencies)
                         {
-                            <tr><td><span id="@agency.Id"></span></td><td>@agency.Name</td><td>@agency.City</td><td><span id="teststat">test</span></td></tr>
+                            <tr><td>@agency.Name</td><td>@agency.City</td><td><span id="teststat">test</span></td></tr>
                         }
             </tbody>
         </table>
@@ -36,8 +30,6 @@
 
     </div>
 </div>
-
-<p><span id="sta">xd</span></p>
 
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
