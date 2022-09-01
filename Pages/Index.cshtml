@@ -21,22 +21,89 @@
                             <th scope="col">Miasto </th>
                             <th scope="col">Status </th>
                         </tr>
-        </div> </thead>
+        
+                    
+        </thead>
+        </table>
+        </div>
+        <table class="table">
         <tbody>
             @foreach (var agency in Model.Agencies)
             {
-                <tr id="@agency.Id" class="align-middle">
+               <tr id="@agency.Id-tr" class="align-middle">
                     <td>@agency.Name</td>
                     <td>@agency.City</td>
                     <td><span id="teststat">test</span></td>
-                </tr>
+                    </tr>
+                 
             }
+          @*  <tr>
+                <td>Policja</td>
+                <td>Toruń</td>
+                    <td><span id="test1">test</span></td>
+            </tr>
+                <tr>
+                    <td>Policja</td>
+                    <td>Poznań</td>
+                    <td><span id="test2">test</span></td>
+                </tr>
+                            <tr>
+                <td>Policja</td>
+                <td>Warszawa</td>
+                    <td><span id="test3">test</span></td>
+            </tr>
+                        <tr>
+                <td>Policja</td>
+                <td>Gdańsk</td>
+                    <td><span id="test4">test</span></td>
+            </tr>
+                        <tr>
+                <td>Pogotowie</td>
+                <td>Śrem</td>
+                    <td><span id="test5">test</span></td>
+            </tr>
+                <tr>
+                    <td>Pogotowie</td>
+                    <td>Środa Wlkp.</td>
+                    <td><span id="test6">test</span></td>
+                </tr>
+                                        <tr>
+                <td>Pogotowie</td>
+                <td>Wrocław</td>
+                    <td><span id="test7">test</span></td>
+            </tr>
+                                    <tr>
+                <td>Straż pożarna</td>
+                <td>Zakopane</td>
+                    <td><span id="test8">test</span></td>
+            </tr>
+                                    <tr>
+                <td>Straż pożarna</td>
+                <td>Kraków</td>
+                    <td><span id="test9">test</span></td>
+            </tr>
+                                    <tr>
+                    <td>Straż pożarna</td>
+                <td>Kielce</td>
+                    <td><span id="test10">test</span></td>
+            </tr>
+                <tr>
+                    <td>Straż miejska</td>
+                    <td>Katowice</td>
+                    <td><span id="test11">test</span></td>
+                </tr>
+                <tr>
+                    <td>Straż miejska</td>
+                    <td>Gorzów Wlkp</td>
+                    <td><span id="test12">test</span></td>
+                </tr>
+*@
         </tbody>
         </table>
    
     </div>
 </div>
-</div>
+
 
 <div class="listofreports">
   <div class="card">
@@ -62,7 +129,7 @@
                                 <td>@report.Address</td>
                                 <td>@report.Type</td>
                                 <td>@report.TimeofReport</td>
-                                <td><span id="testreportstate">testy</span></td>
+                                <td><span id="testreportstate">Nowe zgłoszenie</span></td>
                             </tr>
                         }
                     </tbody>

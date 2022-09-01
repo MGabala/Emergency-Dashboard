@@ -23,11 +23,25 @@ namespace EmergencyDashboard.Hubs
             await Clients.All.ViewCountUpdate(ViewCount);
             await base.OnDisconnectedAsync(exception);
         }
-        public async Task UpdateState(string agencyState)
+        public async Task UpdateState(int id, string state)
         {
-            await Clients.All.ChangeAgencyState(agencyState);
-            await Clients.All.ChangeReportState( agencyState);
-            await Clients.All.ChangeSpecificState( agencyState);
+            await Clients.All.ChangeAgencyState(id,state);
+            //await Clients.All.ChangeFirst(state);
+            //await Clients.All.ChangeSecond(state);
+            //await Clients.All.ChangeThird(state);
+            //await Clients.All.ChangeFourth(state);
+            //await Clients.All.ChangeFifth(state);
+            //await Clients.All.ChangeSixth(state);
+            //await Clients.All.ChangeSeventh(state);
+            //await Clients.All.ChangeEight(state);
+            //await Clients.All.ChangeNinth(state);
+            //await Clients.All.ChangeTenth(state);
+            //await Clients.All.ChangeEleventh(state);
+            //await Clients.All.ChangeTwelth(state);
+
+
+
+            //await Clients.All.ChangeReportState(state);
         }
     }
 }
