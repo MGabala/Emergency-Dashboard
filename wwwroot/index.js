@@ -20,9 +20,8 @@ connection.onclose(async () => {
 
 //PAGE ELEMENTS
 var counter = document.getElementById("viewCounter");
-var st = document.getElementById("teststat");
-var ast = document.getElementById("testreportstate");
-
+var agencystate = document.getElementById("teststat");
+var reportstate = document.getElementById("testreportstate");
 
 //FROM HUB TO CLIENT [EVENTS]
 connection.on("ViewCountUpdate", (viewCount) => {
@@ -30,11 +29,15 @@ connection.on("ViewCountUpdate", (viewCount) => {
 });
 
 connection.on("changeAgencyState", (value) => {
-    st.innerText = value.toString();
+
+    agencystate.innerText= value.toString();
 });
 connection.on("changeReportState", (value) => {
-    ast.innerText = value.toString();
+    reportstate.innerText = value.toString();
 });
+
+
+
 
 // Start the connection.
 start();

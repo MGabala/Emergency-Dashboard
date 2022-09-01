@@ -25,7 +25,7 @@
         <tbody>
             @foreach (var agency in Model.Agencies)
             {
-                <tr id="(@agency.Id-tr)">
+                <tr id="@agency.Id" class="align-middle">
                     <td>@agency.Name</td>
                     <td>@agency.City</td>
                     <td><span id="teststat">test</span></td>
@@ -33,9 +33,10 @@
             }
         </tbody>
         </table>
-        </p>
+   
     </div>
-</div></div>
+</div>
+</div>
 
 <div class="listofreports">
   <div class="card">

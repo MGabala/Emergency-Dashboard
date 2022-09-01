@@ -28,6 +28,8 @@ namespace EmergencyDashboard.Pages
         public async Task OnPostStart()
         {
             await mainHub.Clients.All.SendAsync("ChangeStateTest", "Aktywna");
+            Thread.Sleep(5000);
+            await mainHub.Clients.All.SendAsync("ChangeStateTest", "Na wyjeździe");
         }
     }
 }
