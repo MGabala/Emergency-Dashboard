@@ -30,10 +30,10 @@
         <tbody>
             @foreach (var agency in Model.Agencies)
             {
-               <tr id="@agency.Id-tr" class="align-middle">
+               <tr class="align-middle">
                     <td>@agency.Name</td>
                     <td>@agency.City</td>
-                    <td><span id="teststat">test</span></td>
+                    <td><span id="@agency.Id-stat">test</span></td>
                     </tr>
                  
             }

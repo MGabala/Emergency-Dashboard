@@ -21,7 +21,6 @@ connection.onclose(async () => {
 //PAGE ELEMENTS
 
 var counter = document.getElementById("viewCounter");
-var agencystate = document.getElementById("teststat");
 var reportstate = document.getElementById("testreportstate");
 var page = document.getElementById("main");
 var test1 = document.getElementById("test1");
@@ -43,47 +42,46 @@ connection.on("ViewCountUpdate", (viewCount) => {
 });
 
 connection.on("changeAgencyState", (id, value) => {
-    const tr = document.getElementById(id.value + "-tr");
-   tr.
-    agencystate.innerText = value.toString();
+    console.log("entry");
+    document.getElementById(id + "-stat").innerText = value;
 });
 
-connection.on("changeFirst", (value) => {
-    test1.innerText = value.toString();
-});
-connection.on("changeSecond", (value) => {
-    test2.innerText = value.toString();
-});
-connection.on("changeThird", (value) => {
-    test3.innerText = value.toString();
-});
-connection.on("changeFourth", (value) => {
-    test4.innerText = value.toString();
-});
-connection.on("changeFifth", (value) => {
-    test5.innerText = value.toString();
-});
-connection.on("changeSixth", (value) => {
-    test6.innerText = value.toString();
-});
-connection.on("changeSeventh", (value) => {
-    test7.innerText = value.toString();
-});
-connection.on("changeEight", (value) => {
-    test8.innerText = value.toString();
-});
-connection.on("changeNinth", (value) => {
-    test9.innerText = value.toString();
-});
-connection.on("changeTenth", (value) => {
-    test10.innerText = value.toString();
-});
-connection.on("changeEleventh", (value) => {
-    test11.innerText = value.toString();
-});
-connection.on("changeTwelth", (value) => {
-    test12.innerText = value.toString();
-});
+//connection.on("changeFirst", (value) => {
+//    test1.innerText = value.toString();
+//});
+//connection.on("changeSecond", (value) => {
+//    test2.innerText = value.toString();
+//});
+//connection.on("changeThird", (value) => {
+//    test3.innerText = value.toString();
+//});
+//connection.on("changeFourth", (value) => {
+//    test4.innerText = value.toString();
+//});
+//connection.on("changeFifth", (value) => {
+//    test5.innerText = value.toString();
+//});
+//connection.on("changeSixth", (value) => {
+//    test6.innerText = value.toString();
+//});
+//connection.on("changeSeventh", (value) => {
+//    test7.innerText = value.toString();
+//});
+//connection.on("changeEight", (value) => {
+//    test8.innerText = value.toString();
+//});
+//connection.on("changeNinth", (value) => {
+//    test9.innerText = value.toString();
+//});
+//connection.on("changeTenth", (value) => {
+//    test10.innerText = value.toString();
+//});
+//connection.on("changeEleventh", (value) => {
+//    test11.innerText = value.toString();
+//});
+//connection.on("changeTwelth", (value) => {
+//    test12.innerText = value.toString();
+//});
 
 
 
