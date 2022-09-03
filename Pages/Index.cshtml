@@ -3,116 +3,47 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-
 <div class="header">
-    <div class="card-header"><h1>Emergency Dashboard - najszybszy monitoring zdarzeń w Polsce</h1></div> 
+    <div class="card-header"><h1>Emergency Dashboard - najszybszy monitoring </h1></div>
 </div>
 
 <div class="listofagencies">
     <div class="card">
-        <div class="card-header"><center><b>LiveCad</b></center></div>
         <div class="card-body">
-            <p class="card-text">
                 <table class="table">
+
                     <thead>
-                        <tr>
+                        <tr class="liveCadHeader">
                             <th scope="col">Jednostka </th>
                             <th scope="col">Miasto </th>
                             <th scope="col">Status </th>
                         </tr>
-        
-                    
-        </thead>
-        </table>
+                    </thead>
+                    <tbody>
+                        @foreach (var agency in Model.Agencies)
+                        {
+                            <tr class="liveCadSingleRow">
+                                <td>@agency.Name</td>
+                                <td>@agency.City</td>
+                                <td><span id="@agency.Id-stat">test</span></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
         </div>
-        <table class="table">
-        <tbody>
-            @foreach (var agency in Model.Agencies)
-            {
-               <tr class="align-middle">
-                    <td>@agency.Name</td>
-                    <td>@agency.City</td>
-                    <td><span id="@agency.Id-stat">test</span></td>
-                    </tr>
-                 
-            }
-          @*  <tr>
-                <td>Policja</td>
-                <td>Toruń</td>
-                    <td><span id="test1">test</span></td>
-            </tr>
-                <tr>
-                    <td>Policja</td>
-                    <td>Poznań</td>
-                    <td><span id="test2">test</span></td>
-                </tr>
-                            <tr>
-                <td>Policja</td>
-                <td>Warszawa</td>
-                    <td><span id="test3">test</span></td>
-            </tr>
-                        <tr>
-                <td>Policja</td>
-                <td>Gdańsk</td>
-                    <td><span id="test4">test</span></td>
-            </tr>
-                        <tr>
-                <td>Pogotowie</td>
-                <td>Śrem</td>
-                    <td><span id="test5">test</span></td>
-            </tr>
-                <tr>
-                    <td>Pogotowie</td>
-                    <td>Środa Wlkp.</td>
-                    <td><span id="test6">test</span></td>
-                </tr>
-                                        <tr>
-                <td>Pogotowie</td>
-                <td>Wrocław</td>
-                    <td><span id="test7">test</span></td>
-            </tr>
-                                    <tr>
-                <td>Straż pożarna</td>
-                <td>Zakopane</td>
-                    <td><span id="test8">test</span></td>
-            </tr>
-                                    <tr>
-                <td>Straż pożarna</td>
-                <td>Kraków</td>
-                    <td><span id="test9">test</span></td>
-            </tr>
-                                    <tr>
-                    <td>Straż pożarna</td>
-                <td>Kielce</td>
-                    <td><span id="test10">test</span></td>
-            </tr>
-                <tr>
-                    <td>Straż miejska</td>
-                    <td>Katowice</td>
-                    <td><span id="test11">test</span></td>
-                </tr>
-                <tr>
-                    <td>Straż miejska</td>
-                    <td>Gorzów Wlkp</td>
-                    <td><span id="test12">test</span></td>
-                </tr>
-*@
-        </tbody>
-        </table>
-   
     </div>
 </div>
-
+<div class="counterCSS">
+    <h2><b>Liczba koordynatorów online w całej polsce: <span id="viewCounter">0</span></b></h2>
+</div>
 
 <div class="listofreports">
   <div class="card">
-        <div class="card-header"><center><b>LiveCad</b></center></div>
         <div class="card-body">
-            <p class="card-text">
                 <table class="table">
+                   
                     <thead>
-                        <tr>
+                        <tr class="liveCadHeader">
                             <td>Jednostka</td>
                             <td>Miasto</td>
                             <td>Adres</td>
@@ -123,7 +54,7 @@
                     </thead>
                     <tbody>
                         @foreach(var report in Model.Reports){
-                            <tr>
+                            <tr class="liveCadSingleRow">
                                 <td>@report.Name</td>
                                 <td>@report.City</td>
                                 <td>@report.Address</td>
@@ -134,12 +65,12 @@
                         }
                     </tbody>
                 </table>
-            </p>
         </div>
-  </div></div>
-
+  </div>
+  </div>
 
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/index.js"></script>
 }
+

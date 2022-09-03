@@ -1,4 +1,4 @@
-/*html {
+html {
   font-size: 14px;
 }
 
@@ -15,24 +15,26 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-color: white;
+  background-color: black;
 }
-h1{
-    color: red
-}
-*/
-
 
 .header {
     border: 1px inset black;
     padding: 15px;
+    background-color: darkblue;
+    color: white;
+    border: solid;
+    text-align: center;
+
 }
 
 .listofagencies {
     width: 35%;
     float: left;
     padding: 15px;
+    background-color: darkblue;
     border: 1px inset black;
+    font-size: 25px;
 }
 
 .listofreports {
@@ -40,8 +42,37 @@ h1{
     float: left;
     padding: 15px;
     border: 1px inset black;
+    background-color: darkblue;
+    color: white;
+    font-size: 25px;
 }
-body {
-    margin-bottom: 60px;
-    background-color: white;
+.card {
+    background-color: darkblue;
+    color: white;
+}
+.liveCadHeader {
+    background-color: darkblue;
+    color: white;
+    border: solid;
+}
+.liveCadSingleRow{
+    background-color: darkblue;
+    color:white;
+    border:solid;
+}
+
+/*.counterCSS {
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}*/
+.counterCSS {
+    width: 65%;
+    float: left;
+    padding: 15px;
+    background-color: darkblue;
+    color: white;
+    border: 1px inset black;
+    text-align: center;
+    
 }
