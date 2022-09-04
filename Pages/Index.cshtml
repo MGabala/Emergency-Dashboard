@@ -17,7 +17,7 @@
             <tbody>
                  @foreach (var agency in Model.Agencies)
                 {
-                <tr class="liveCadSingleRow">
+                <tr id="@agency.Id-liveCadSingleRow">
                 <td>@agency.Name</td>
                 <td>@agency.City</td>
                 <td><span id="@agency.Id-stat">test</span></td>
@@ -42,7 +42,7 @@
             <tbody>
                 @foreach (var report in Model.Reports)
                 {
-                    <tr class="liveCadSingleRow">
+                    <tr class="@report.Id-liveCadSingleRow">
                         <td>@report.Name</td>
                         <td>@report.City</td>
                         <td>@report.Address</td>
@@ -57,6 +57,6 @@
 </div>
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
-    <script src="~/index.js"></script>
+    <script src="~/index.js" asp-append-version="true"></script>
 }
 

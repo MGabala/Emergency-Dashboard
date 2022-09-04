@@ -23,9 +23,9 @@ namespace EmergencyDashboard.Hubs
             await Clients.All.ViewCountUpdate(ViewCount);
             await base.OnDisconnectedAsync(exception);
         }
-        public async Task UpdateState(int id, string state)
+        public async Task UpdateState(int idRow,int id, string state)
         {
-            await Clients.All.ChangeAgencyState(id,state);
+            await Clients.All.ChangeAgencyState(idRow,id,state);
             //await Clients.All.ChangeFirst(state);
             //await Clients.All.ChangeSecond(state);
             //await Clients.All.ChangeThird(state);

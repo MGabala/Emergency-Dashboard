@@ -29,8 +29,12 @@ connection.on("ViewCountUpdate", (viewCount) => {
     counter.innerHTML = viewCount;
 });
 
-connection.on("changeAgencyState", (id, value) => {
-    console.log("testEntry");
+connection.on("changeAgencyState", (idRow, id, value) => {
+    console.log("testy");
+  
+    document.getElementById(id + "-stat").style.color = "red";
+    document.getElementById(idRow + "-liveCadSingleRow").style.backgroundColor = "green";
+    document.getElementById(idRow + "-liveCadSingleRow").style.color = "black";
     document.getElementById(id + "-stat").innerText = value;
 });
 

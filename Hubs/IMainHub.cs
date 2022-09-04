@@ -2,7 +2,7 @@
 {
     public interface IMainHub
     {
-        Task ChangeAgencyState(int id, string state);
+        Task ChangeAgencyState(int idRow,int id, string state);
         Task ChangeFirst(int state);
         Task ChangeSecond(int state);
         Task ChangeThird(int state);
