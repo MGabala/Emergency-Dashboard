@@ -21,8 +21,8 @@ namespace EmergencyDashboard.Pages
         public async Task OnPostStart()
         {
             //Update only first element. Need to scale it to randomly change state for all records.
-           await context.Clients.All.SendAsync("changeAgencyState","2","3", "Aktywna");
-           await context.Clients.All.SendAsync("changeAgencyState","2","5", "Aktywna");
+           await context.Clients.All.SendAsync("changeAgencyState","3","3","green", "Aktywna");
+           await context.Clients.All.SendAsync("changeAgencyState","5","5", "green","Aktywna");
             //await context.Clients.All.SendAsync("changeReportState", "Rozpoznanie");
           
         }

@@ -29,11 +29,9 @@ connection.on("ViewCountUpdate", (viewCount) => {
     counter.innerHTML = viewCount;
 });
 
-connection.on("changeAgencyState", (idRow, id, value) => {
+connection.on("changeAgencyState", (idRow, id, color,value) => {
     console.log("testy");
-  
-    document.getElementById(id + "-stat").style.color = "red";
-    document.getElementById(idRow + "-liveCadSingleRow").style.backgroundColor = "green";
+    document.getElementById(idRow + "-liveCadSingleRow").style.backgroundColor = color.toString();
     document.getElementById(idRow + "-liveCadSingleRow").style.color = "black";
     document.getElementById(id + "-stat").innerText = value;
 });
