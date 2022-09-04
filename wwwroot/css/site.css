@@ -18,35 +18,39 @@ html {
     display: grid;
     background-color: darkblue;
     color: white;
+    border: solid;
+    padding: 3px;
     font-weight: bold;
     text-align: center;
     grid-template-areas:
         "header header "
         "agencies counter "
         "agencies reports "
+        "agencies reports"
 }
 
 .grid-item-header {
+    border-style: none none solid none;
     grid-area: header;
-    border: solid;
     text-align: center;
+    color:red;
 }
 
 .grid-item-agencies {
-
     grid-area: agencies;
-    border: solid;
+    border-style: none solid none none;
+
 }
 
 .grid-item-reports {
     grid-area: reports;
-    border: solid;
-    grid-row: span 2;
+    grid-row: span 1;
+    border-style: none none none none;
 }
 
 .grid-item-counter {
     grid-area: counter;
-    border: solid;
+    border-style: none none solid none;
     height: fit-content;
 }
 .table {
