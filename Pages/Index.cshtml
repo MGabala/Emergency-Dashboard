@@ -2,73 +2,59 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-}
-<div class="header">
-    <div class="card-header"><h1>Emergency Dashboard - najszybszy monitoring </h1></div>
-</div>
+}<div class="grid-container">
+    <div class="grid-item-header"><h1>Emergency Dashboard - najszybszy monitoring </h1></div>
+    <div class="grid-item-agencies">
+        <table class="table">
 
-<div class="listofagencies">
-    <div class="card">
-        <div class="card-body">
-                <table class="table">
-
-                    <thead>
-                        <tr class="liveCadHeader">
-                            <th scope="col">Jednostka </th>
-                            <th scope="col">Miasto </th>
-                            <th scope="col">Status </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var agency in Model.Agencies)
-                        {
-                            <tr class="liveCadSingleRow">
-                                <td>@agency.Name</td>
-                                <td>@agency.City</td>
-                                <td><span id="@agency.Id-stat">test</span></td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-        </div>
+            <thead>
+                <tr>
+                    <th scope="col">Jednostka </th>
+                    <th scope="col">Miasto </th>
+                    <th scope="col">Status </th>
+                </tr>
+            </thead>
+            <tbody>
+                 @foreach (var agency in Model.Agencies)
+                {
+                <tr class="liveCadSingleRow">
+                <td>@agency.Name</td>
+                <td>@agency.City</td>
+                <td><span id="@agency.Id-stat">test</span></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="grid-item-counter"><h2><b>Liczba koordynatorów online w całej polsce: <span id="viewCounter">0</span></b></h2></div>
+    <div class="grid-item-reports">
+        <table class="table">
+                 <thead>
+                <tr>
+                    <td>Jednostka</td>
+                    <td>Miasto</td>
+                    <td>Adres</td>
+                    <td>Typ zgłoszenia</td>
+                    <td>Czas zgłoszenia</td>
+                    <td>Status</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var report in Model.Reports)
+                {
+                    <tr class="liveCadSingleRow">
+                        <td>@report.Name</td>
+                        <td>@report.City</td>
+                        <td>@report.Address</td>
+                        <td>@report.Type</td>
+                        <td>@report.TimeofReport</td>
+                        <td><span id="testreportstate">Nowe zgłoszenie</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
-<div class="counterCSS">
-    <h2><b>Liczba koordynatorów online w całej polsce: <span id="viewCounter">0</span></b></h2>
-</div>
-
-<div class="listofreports">
-  <div class="card">
-        <div class="card-body">
-                <table class="table">
-                   
-                    <thead>
-                        <tr class="liveCadHeader">
-                            <td>Jednostka</td>
-                            <td>Miasto</td>
-                            <td>Adres</td>
-                            <td>Typ zgłoszenia</td>
-                            <td>Czas zgłoszenia</td>
-                            <td>Status</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach(var report in Model.Reports){
-                            <tr class="liveCadSingleRow">
-                                <td>@report.Name</td>
-                                <td>@report.City</td>
-                                <td>@report.Address</td>
-                                <td>@report.Type</td>
-                                <td>@report.TimeofReport</td>
-                                <td><span id="testreportstate">Nowe zgłoszenie</span></td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-        </div>
-  </div>
-  </div>
-
 @section Scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/index.js"></script>

@@ -11,68 +11,45 @@ html {
 html {
   position: relative;
   min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
   background-color: black;
 }
 
-.header {
-    border: 1px inset black;
-    padding: 15px;
+.grid-container {
+    display: grid;
     background-color: darkblue;
     color: white;
+    font-weight: bold;
+    text-align: center;
+    grid-template-areas:
+        "header header "
+        "agencies counter "
+        "agencies reports "
+}
+
+.grid-item-header {
+    grid-area: header;
     border: solid;
     text-align: center;
-
 }
 
-.listofagencies {
-    width: 35%;
-    float: left;
-    padding: 15px;
-    background-color: darkblue;
-    border: 1px inset black;
-    font-size: 25px;
-}
+.grid-item-agencies {
 
-.listofreports {
-    width: 65%;
-    float: left;
-    padding: 15px;
-    border: 1px inset black;
-    background-color: darkblue;
-    color: white;
-    font-size: 25px;
-}
-.card {
-    background-color: darkblue;
-    color: white;
-}
-.liveCadHeader {
-    background-color: darkblue;
-    color: white;
+    grid-area: agencies;
     border: solid;
 }
-.liveCadSingleRow{
-    background-color: darkblue;
-    color:white;
-    border:solid;
+
+.grid-item-reports {
+    grid-area: reports;
+    border: solid;
+    grid-row: span 2;
 }
 
-/*.counterCSS {
-    background-color: darkblue;
+.grid-item-counter {
+    grid-area: counter;
+    border: solid;
+    height: fit-content;
+}
+.table {
     color: white;
-    text-align: center;
-}*/
-.counterCSS {
-    width: 65%;
-    float: left;
-    padding: 15px;
-    background-color: darkblue;
-    color: white;
-    border: 1px inset black;
-    text-align: center;
-    
+   
 }
