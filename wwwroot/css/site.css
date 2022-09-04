@@ -30,7 +30,7 @@ html {
 }
 
 .grid-item-header {
-    border-style: none none solid none;
+    border-bottom: 6px solid white;;
     grid-area: header;
     text-align: center;
     color:red;
