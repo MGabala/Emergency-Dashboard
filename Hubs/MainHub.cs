@@ -30,7 +30,7 @@ namespace EmergencyDashboard.Hubs
         }
         public async Task UpdateReportTable(string name, string address, string city, string type, DateTime date, string status)
         {
-            await Clients.All.UpdateReportTable(name,address,city,type,date,status);
+            await Clients.All.UpdateReportTable(name,address,city,type,date.Date,status);
         }
     }
 }

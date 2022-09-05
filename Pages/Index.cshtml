@@ -28,7 +28,7 @@
     </div>
     <div class="grid-item-counter"><h2><b>Liczba koordynatorów online w całej polsce: <span id="viewCounter">0</span></b></h2></div>
     <div class="grid-item-reports">
-        <table class="table" id="reportTable">
+        <table class="table">
                  <thead>
                 <tr>
                     <td>Jednostka</td>
@@ -39,16 +39,16 @@
                     <td>Status</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="reportTable">
                 @foreach (var report in Model.Reports)
                 {
                     <tr class="@report.Id-liveCadSingleRow">
-                        <td>@report.Name</td>
-                        <td>@report.City</td>
-                        <td>@report.Address</td>
-                        <td>@report.Type</td>
-                        <td>@report.TimeofReport</td>
-                        <td><span id="testreportstate">Nowe zgłoszenie</span></td>
+                        <td id="@report.Id">@report.Name</td>
+                        <td id="@report.Id">@report.City</td>
+                        <td id="@report.Id">@report.Address</td>
+                        <td id="@report.Id">@report.Type</td>
+                        <td id="@report.Id">@report.TimeofReport</td>
+                        <td id="@report.Id" ><span id="testreportstate">Nowe zgłoszenie</span></td>
                     </tr>
                 }
             </tbody>
