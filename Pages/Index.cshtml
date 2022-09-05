@@ -5,7 +5,7 @@
 }<div class="grid-container">
     <div class="grid-item-header"><h1>Emergency Dashboard - najszybszy monitoring </h1></div>
     <div class="grid-item-agencies">
-        <table class="table">
+        <table class="table" id="agenciesTable">
 
             <thead>
                 <tr>
@@ -16,7 +16,7 @@
             </thead>
             <tbody>
                  @foreach (var agency in Model.Agencies)
-                {
+                {  
                 <tr id="@agency.Id-liveCadSingleRow">
                 <td>@agency.Name</td>
                 <td>@agency.City</td>
@@ -28,7 +28,7 @@
     </div>
     <div class="grid-item-counter"><h2><b>Liczba koordynatorów online w całej polsce: <span id="viewCounter">0</span></b></h2></div>
     <div class="grid-item-reports">
-        <table class="table">
+        <table class="table" id="reportTable">
                  <thead>
                 <tr>
                     <td>Jednostka</td>

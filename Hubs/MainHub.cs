@@ -26,22 +26,11 @@ namespace EmergencyDashboard.Hubs
         public async Task UpdateState(int idRow,int id,string color, string state)
         {
             await Clients.All.ChangeAgencyState(idRow,id,color,state);
-            //await Clients.All.ChangeFirst(state);
-            //await Clients.All.ChangeSecond(state);
-            //await Clients.All.ChangeThird(state);
-            //await Clients.All.ChangeFourth(state);
-            //await Clients.All.ChangeFifth(state);
-            //await Clients.All.ChangeSixth(state);
-            //await Clients.All.ChangeSeventh(state);
-            //await Clients.All.ChangeEight(state);
-            //await Clients.All.ChangeNinth(state);
-            //await Clients.All.ChangeTenth(state);
-            //await Clients.All.ChangeEleventh(state);
-            //await Clients.All.ChangeTwelth(state);
-
-
-
             //await Clients.All.ChangeReportState(state);
+        }
+        public async Task UpdateReportTable(string name, string address, string city, string type, DateTime date, string status)
+        {
+            await Clients.All.UpdateReportTable(name,address,city,type,date,status);
         }
     }
 }
