@@ -21,8 +21,8 @@ namespace EmergencyDashboard.Pages
         public async Task OnPostStart()
         {
             await ShowStart();
-            await context.Clients.All.SendAsync("changeReportState",2, "Rozpoznanie","orange");
-          //  await context.Clients.All.SendAsync("changeReportState",1, "Rozpoznanie","red");
+
+           
         }
 
         private async Task ShowStart()
@@ -30,6 +30,8 @@ namespace EmergencyDashboard.Pages
             await context.Clients.All.SendAsync("changeAgencyState", "10", "10", "green", "Aktywna");
             Thread.Sleep(2000);
             await context.Clients.All.SendAsync("changeAgencyState", "7", "7", "green", "Aktywna");
+            Thread.Sleep(850);
+            await context.Clients.All.SendAsync("changeReportState", 1, "Rozpoznanie", "yellow");
             Thread.Sleep(1500);
             await context.Clients.All.SendAsync("changeAgencyState", "4", "4", "green", "Aktywna");
             Thread.Sleep(2500);
@@ -40,6 +42,8 @@ namespace EmergencyDashboard.Pages
             await context.Clients.All.SendAsync("changeAgencyState", "10", "10", "orange", "W terenie");
             Thread.Sleep(2000);
             await context.Clients.All.SendAsync("changeAgencyState", "12", "12", "green", "Aktywna");
+            Thread.Sleep(950);
+            await context.Clients.All.SendAsync("changeReportState", 2, "Przyjête", "orange");
             Thread.Sleep(550);
             await context.Clients.All.SendAsync("changeAgencyState", "12", "12", "orange", "W terenie");
             Thread.Sleep(999);
@@ -48,16 +52,26 @@ namespace EmergencyDashboard.Pages
             await context.Clients.All.SendAsync("changeAgencyState", "3", "3", "green", "Aktywna");
             Thread.Sleep(1666);
             await context.Clients.All.SendAsync("changeAgencyState", "7", "7", "red", "Nieaktywna");
+            Thread.Sleep(1000);
+            await context.Clients.All.SendAsync("changeReportState", 2, "Rozpoznanie", "yellow");
             Thread.Sleep(1450);
             await context.Clients.All.SendAsync("changeAgencyState", "5", "5", "orange", "W terenie");
             Thread.Sleep(1000);
+            await context.Clients.All.SendAsync("changeReportState", 3, "Rozpoznanie", "yellow");
+            Thread.Sleep(700);
             await context.Clients.All.SendAsync("changeAgencyState", "10", "10", "green", "Aktywna");
             Thread.Sleep(1500);
             await context.Clients.All.SendAsync("updateReportTable", "Policja", "G³ówna 5", "Warszawa", "Kradzie¿", "2022-08-31 21:45", "Nowe zg³oszenie", 4);
-            Thread.Sleep(1500);
+            Thread.Sleep(1000);
+            await context.Clients.All.SendAsync("changeReportState", 3, "Zakoñczone", "green");
+            Thread.Sleep(850);
             await context.Clients.All.SendAsync("changeAgencyState", "11", "11", "red", "Nieaktywna");
             Thread.Sleep(850);
             await context.Clients.All.SendAsync("changeAgencyState", "1", "1", "green", "Aktywna");
+            Thread.Sleep(1000);
+            await context.Clients.All.SendAsync("changeReportState", 4, "Rozpoznanie", "yellow");
+            Thread.Sleep(1500);
+            await context.Clients.All.SendAsync("changeReportState", 1, "Zakoñczone", "green");
             Thread.Sleep(760);
             await context.Clients.All.SendAsync("changeAgencyState", "2", "2", "green", "Aktywna");
             Thread.Sleep(1050);
@@ -67,16 +81,24 @@ namespace EmergencyDashboard.Pages
             Thread.Sleep(2500);
             await context.Clients.All.SendAsync("changeAgencyState", "8", "8", "orange", "W terenie");
             Thread.Sleep(750);
+            await context.Clients.All.SendAsync("changeReportState", 4, "Zakoñczone", "green");
+            Thread.Sleep(700);
             await context.Clients.All.SendAsync("updateReportTable", "Stra¿ miejska", "Krañcowa 35", "Œroda Wlkp.", "W³uczêga", "2022-08-31 16:45", "Nowe zg³oszenie", 5);
             Thread.Sleep(750);
             await context.Clients.All.SendAsync("changeAgencyState", "9", "9", "orange", "W terenie");
             Thread.Sleep(1500);
             await context.Clients.All.SendAsync("changeAgencyState", "11", "11", "green", "Aktywna");
+            Thread.Sleep(750);
+            await context.Clients.All.SendAsync("changeReportState", 2, "Zakoñczone", "green");
             Thread.Sleep(666);
             await context.Clients.All.SendAsync("changeAgencyState", "3", "3", "orange", "W terenie");
+            Thread.Sleep(666);
+            await context.Clients.All.SendAsync("changeReportState", 5, "Przyjête", "orange");
             Thread.Sleep(1000);
             await context.Clients.All.SendAsync("changeAgencyState", "8", "8", "green", "Aktywna");
             Thread.Sleep(1500);
+            await context.Clients.All.SendAsync("changeReportState", 5, "Zakoñczone", "green");
+            Thread.Sleep(1000);
             await context.Clients.All.SendAsync("changeAgencyState", "4", "4", "red", "Nieaktywna");
         }
 
