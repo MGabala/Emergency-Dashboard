@@ -22,7 +22,6 @@ namespace EmergencyDashboard.Pages
         {
             await ShowStart();
 
-           
         }
 
         private async Task ShowStart()
