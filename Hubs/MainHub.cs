@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Net;
+using System.Runtime.CompilerServices;
+using System.Xml.Linq;
 
 namespace EmergencyDashboard.Hubs
 {
@@ -26,11 +28,16 @@ namespace EmergencyDashboard.Hubs
         public async Task UpdateState(int idRow,int id,string color, string state)
         {
             await Clients.All.ChangeAgencyState(idRow,id,color,state);
-            //await Clients.All.ChangeReportState(state);
+            
         }
-        public async Task UpdateReportTable(string name, string address, string city, string type, DateTime date, string status)
+        public async Task UpdateReportState(int id, string state)
         {
-            await Clients.All.UpdateReportTable(name,address,city,type,date.Date,status);
+            await Clients.All.ChangeReportState(id,state);
+        }
+
+        public async Task UpdateReportTable(string name, string address, string city, string type, string date, string status, int idRow)
+        {
+            await Clients.All.UpdateReportTable(name, address, city, type, date, status, idRow);
         }
     }
 }

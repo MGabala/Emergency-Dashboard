@@ -29,18 +29,21 @@ connection.on("ViewCountUpdate", (viewCount) => {
     counter.innerHTML = viewCount;
 });
 
-connection.on("changeAgencyState", (idRow, id, color,value) => {
+connection.on("changeAgencyState", (idRow, id, color, value) => {
     console.log("testy");
     document.getElementById(idRow + "-liveCadSingleRow").style.backgroundColor = color.toString();
     document.getElementById(idRow + "-liveCadSingleRow").style.color = "black";
     document.getElementById(id + "-stat").innerText = value;
+    
 });
 
-connection.on("changeReportState", (value) => {
-    reportstate.innerText = value.toString();
+connection.on("changeReportState", (id, value) => {
+    console.log("report-state-TEST")
+    document.getElementById(id + "-reportstate").innerText = value;
 });
 
-connection.on("updateReportTable", (name, address, city, type, date, status) => {
+ 
+connection.on("updateReportTable", (name, address, city, type, date, status, idRow) => {
     var table = document.getElementById("reportTable");
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
@@ -55,7 +58,8 @@ connection.on("updateReportTable", (name, address, city, type, date, status) => 
     cell4.innerHTML = type.toString();
     cell5.innerHTML = date.toString();
     cell6.innerHTML = status.toString();
-})
+    row.setAttribute("id", idRow);
+});
 
 // Start the connection.
 start();

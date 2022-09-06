@@ -7,7 +7,7 @@
         public string Address { get; set; } = null!;
         public string City { get; set; } = null!;
         public string Type { get; set; } = null!;
-        public DateTime TimeofReport { get; set; }
+        public string Time { get; set; } = null!;
         public string Status { get; set; } = null!;
     }
 }

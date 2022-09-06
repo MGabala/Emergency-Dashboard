@@ -43,12 +43,12 @@
                 @foreach (var report in Model.Reports)
                 {
                     <tr class="@report.Id-liveCadSingleRow">
-                        <td id="@report.Id">@report.Name</td>
-                        <td id="@report.Id">@report.City</td>
-                        <td id="@report.Id">@report.Address</td>
-                        <td id="@report.Id">@report.Type</td>
-                        <td id="@report.Id">@report.TimeofReport</td>
-                        <td id="@report.Id" ><span id="testreportstate">Nowe zgłoszenie</span></td>
+                        <td >@report.Name</td>
+                        <td >@report.City</td>
+                        <td >@report.Address</td>
+                        <td >@report.Type</td>
+                        <td >@report.Time</td>
+                        <td ><span id="@report.Id-reportstate">@report.Status</span></td>
                     </tr>
                 }
             </tbody>
