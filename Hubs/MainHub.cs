@@ -30,9 +30,9 @@ namespace EmergencyDashboard.Hubs
             await Clients.All.ChangeAgencyState(idRow,id,color,state);
             
         }
-        public async Task UpdateReportState(int id, string state)
+        public async Task UpdateReportState(int id, string state,string color)
         {
-            await Clients.All.ChangeReportState(id,state);
+            await Clients.All.ChangeReportState(id,state,color);
         }
 
         public async Task UpdateReportTable(string name, string address, string city, string type, string date, string status, int idRow)

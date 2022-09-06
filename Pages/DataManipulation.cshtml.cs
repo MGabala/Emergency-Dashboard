@@ -20,8 +20,9 @@ namespace EmergencyDashboard.Pages
         }
         public async Task OnPostStart()
         {
-          // ShowStart();
-            await context.Clients.All.SendAsync("changeReportState",1, "Rozpoznanie");
+            await ShowStart();
+            await context.Clients.All.SendAsync("changeReportState",2, "Rozpoznanie","orange");
+          //  await context.Clients.All.SendAsync("changeReportState",1, "Rozpoznanie","red");
         }
 
         private async Task ShowStart()

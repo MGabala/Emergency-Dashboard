@@ -37,8 +37,10 @@ connection.on("changeAgencyState", (idRow, id, color, value) => {
     
 });
 
-connection.on("changeReportState", (id, value) => {
+connection.on("changeReportState", (id, value, color) => {
     console.log("report-state-TEST")
+    document.getElementById(id + "-liveCadReportRow").style.backgroundColor = color.toString();
+    document.getElementById(id + "-liveCadReportRow").style.color = "black";
     document.getElementById(id + "-reportstate").innerText = value;
 });
 
@@ -58,7 +60,8 @@ connection.on("updateReportTable", (name, address, city, type, date, status, idR
     cell4.innerHTML = type.toString();
     cell5.innerHTML = date.toString();
     cell6.innerHTML = status.toString();
-    row.setAttribute("id", idRow);
+    row.setAttribute("id", idRow + "-liveCadReportRow");
+    cell6.setAttribute("id", idRow + "-reportstate");
 });
 
 // Start the connection.

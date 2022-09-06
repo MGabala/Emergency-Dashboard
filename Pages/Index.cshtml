@@ -20,7 +20,7 @@
                 <tr id="@agency.Id-liveCadSingleRow">
                 <td>@agency.Name</td>
                 <td>@agency.City</td>
-                <td><span id="@agency.Id-stat">test</span></td>
+                <td id="@agency.Id-stat">test</td>
                 </tr>
                 }
             </tbody>
@@ -42,13 +42,13 @@
             <tbody id="reportTable">
                 @foreach (var report in Model.Reports)
                 {
-                    <tr class="@report.Id-liveCadSingleRow">
+                    <tr id="@report.Id-liveCadReportRow">
                         <td >@report.Name</td>
                         <td >@report.City</td>
                         <td >@report.Address</td>
                         <td >@report.Type</td>
                         <td >@report.Time</td>
-                        <td ><span id="@report.Id-reportstate">@report.Status</span></td>
+                        <td id="@report.Id-reportstate">@report.Status</td>
                     </tr>
                 }
             </tbody>
